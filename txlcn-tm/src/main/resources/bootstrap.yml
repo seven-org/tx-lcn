@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: tx-manager
+  profiles:
+    active:
+    - "@profileActive@"
+  cloud:
+    config:
+      label: master
+      uri:
+      - http://configcenter:9101/
+      fail-fast: true
+      retry:
+        max-attempts: 7
