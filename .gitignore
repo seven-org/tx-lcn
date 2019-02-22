@@ -1,6 +1,8 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+txlcn-tm/src/main/resources/*.properties
+
 # Package Files #
 *.jar
 *.war

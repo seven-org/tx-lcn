@@ -13,8 +13,40 @@
     <version>5.0.1.RELEASE</version>
     <packaging>jar</packaging>
 
+	<profiles>
+		<!-- for local -->
+		<profile>
+			<id>local</id>
+			<properties>
+				<profileActive>local</profileActive>
+			</properties>
+		</profile>
+		<!-- for test -->
+		<profile>
+			<id>test</id>
+			<properties>
+				<profileActive>test</profileActive>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<!-- for prod -->
+		<profile>
+			<id>prod</id>
+			<properties>
+				<profileActive>prod</profileActive>
+			</properties>
+		</profile>
+	</profiles>
+	
     <dependencies>
 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		
         <dependency>
             <groupId>com.codingapi.txlcn</groupId>
             <artifactId>txlcn-logger</artifactId>
